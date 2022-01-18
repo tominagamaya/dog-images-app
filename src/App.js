@@ -8,11 +8,11 @@ function Header() {
   )
 }
 
-function Image() {
+function Image(props) {
   return (
     <figure>
       <img
-        src="https://images.dog.ceo/breeds/shiba/shiba-8.jpg"
+        src={props.src}
         alt="cute dog"
       ></img>
     </figure>
@@ -20,10 +20,18 @@ function Image() {
 }
 
 function Main() {
+  const urls = ["https://images.dog.ceo/breeds/shiba/shiba-8.jpg",
+                "https://images.dog.ceo/breeds/shiba/shiba-9.jpg"]
   return (
     <main>
       <section>
-        <Image />
+        <div className="container">
+          {urls.map((url) => {
+            return (
+              <Image src={url} />
+            )
+          })}
+        </div>
       </section>
     </main>
   )
