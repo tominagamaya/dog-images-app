@@ -1,4 +1,6 @@
 import './App.css';
+import { useEffect, useState } from "react";
+import { fetchImages } from "./api";
 
 function Header() {
   return (
@@ -24,8 +26,13 @@ function Loading() {
 }
 
 function Main() {
-  const urls = ["https://images.dog.ceo/breeds/shiba/shiba-8.jpg",
-                "https://images.dog.ceo/breeds/shiba/shiba-9.jpg"]
+  const [urls, setUrls] = useState(null);
+
+  useEffect(() => {
+    fetchImages("shiba").then((urls) => {
+      setUrls(urls);
+    })
+  }, [])
   if (urls == null) {
     return <Loading />;
   }
