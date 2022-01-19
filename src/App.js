@@ -19,9 +19,16 @@ function Image(props) {
   )
 }
 
+function Loading() {
+  return <p>Loading...</p>;
+}
+
 function Main() {
   const urls = ["https://images.dog.ceo/breeds/shiba/shiba-8.jpg",
                 "https://images.dog.ceo/breeds/shiba/shiba-9.jpg"]
+  if (urls == null) {
+    return <Loading />;
+  }
   return (
     <main>
       <section>
