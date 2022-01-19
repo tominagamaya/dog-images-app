@@ -12,7 +12,7 @@ function Header() {
 
 function Image(props) {
   return (
-    <figure>
+    <figure className="content">
       <img
         src={props.src}
         alt="cute dog"
@@ -34,12 +34,19 @@ function Form(props) {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="select-breed">
           <div>
             <div>
               <select name="breed" defaultValue="shiba">
                 <option value="shiba">Shiba</option>
                 <option value="akita">Akita</option>
+                <option value="dachshund">Dachshund</option>
+                <option value="dalmatian">Dalmatian</option>
+                <option value="labrador">Labrador</option>
+                <option value="maltese">Maltese</option>
+                <option value="poodle/toy">Toy Poodle</option>
+                <option value="terrier/yorkshire">Yorkshire Terrier</option>
+                <option value="collie/border">Border Collie</option>
               </select>
             </div>
           </div>
@@ -72,16 +79,16 @@ function Main() {
   }
   return (
     <main>
-      <section>
+      <section className="image-section">
         <div className="container">
           <Form onFormSubmit={reloadImages} />
         </div>
       </section>
       <section>
         <div className="container">
-          {urls.map((url) => {
+          {urls.map((url, index) => {
             return (
-              <Image src={url} />
+              <Image key={index} src={url} />
             )
           })}
         </div>

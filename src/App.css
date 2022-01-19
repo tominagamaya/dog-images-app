@@ -16,6 +16,37 @@
   color: #61dafb;
 }
 
+.content {
+  display: inline-block;
+  vertical-align: top;
+  margin: 20px;
+}
+
+.select-breed {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+}
+
+button {
+  font-size: 15px;
+  margin-left: 20px;
+  padding: 4px 15px;
+  border-radius: 5px;
+}
+
+select {
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+img {
+  width: 350px;
+  height: auto;
+  border-radius: 5px;
+}
+
 .footer {
   background-color: rgb(241, 238, 238);
   padding: 20px 0;
